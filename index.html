@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Specification Template - CPS Learning App</title>
+    <meta
+      name="description"
+      content="A GitHub Pages-ready HTML/CSS/JS starter implementing the CPS Learning App design system — minimalist typography, scroll reveals, and skeleton loading."
+    />
+
+    <!-- Favicon (placeholder — replace with a real icon in assets/) -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Project Specification Template - CPS Learning App"
+    />
+    <meta
+      property="og:description"
+      content="A GitHub Pages-ready starter implementing the CPS Learning App design system."
+    />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Inter (400/600/700) + Manrope (900) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Project stylesheet -->
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="#top" class="site-header__brand" id="top">
+          CPS<span class="text-accent">·</span>Learning
+        </a>
+
+        <button
+          type="button"
+          class="nav-toggle"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+
+        <nav
+          id="primary-nav"
+          class="main-nav"
+          data-nav-menu
+          aria-label="Main navigation"
+        >
+          <ul class="main-nav__list">
+            <li>
+              <a class="main-nav__link" href="#features" aria-current="page"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a class="main-nav__link" href="#testimonials">Testimonials</a>
+            </li>
+            <li><a class="main-nav__link" href="#resources">Resources</a></li>
+            <li><a class="main-nav__link" href="#get-started">Get started</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero: minimalist typography -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container hero__inner">
+          <span class="eyebrow" data-aos="fade-up">Learning platform</span>
+          <h1 class="hero__title" id="hero-heading" data-aos="fade-up">
+            Build faster.
+            <span class="text-accent">Learn smarter.</span>
+          </h1>
+          <p class="lead hero__lead" data-aos="fade-up">
+            A clean, deployment-ready starter for the CPS Learning App. Clone it,
+            open <code>index.html</code>, and ship to GitHub Pages with no build
+            step required.
+          </p>
+          <div class="cluster hero__actions" data-aos="fade-up">
+            <a class="btn btn--primary" href="#get-started">Get started</a>
+            <a class="btn btn--ghost" href="#features">Explore features</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature grid -->
+      <section
+        class="section section--alt"
+        id="features"
+        aria-labelledby="features-heading"
+      >
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="eyebrow">Why this template</span>
+            <h2 id="features-heading">Everything you need to start</h2>
+            <p class="lead">
+              Opinionated defaults, accessible markup, and a token-driven design
+              system that stays out of your way.
+            </p>
+          </div>
+
+          <div class="grid feature-grid">
+            <article class="card" data-aos="fade-up">
+              <span class="card__index" aria-hidden="true">01</span>
+              <h3 class="card__title">Design tokens</h3>
+              <p class="card__text">
+                Colors, spacing, radius, and fluid type are defined once as CSS
+                custom properties, so re-theming is a single-file change.
+              </p>
+            </article>
+
+            <article class="card" data-aos="fade-up">
+              <span class="card__index" aria-hidden="true">02</span>
+              <h3 class="card__title">Scroll reveals</h3>
+              <p class="card__text">
+                Sections animate into view with the Intersection Observer API and
+                degrade gracefully when JavaScript or motion is unavailable.
+              </p>
+            </article>
+
+            <article class="card" data-aos="fade-up">
+              <span class="card__index" aria-hidden="true">03</span>
+              <h3 class="card__title">Zero build</h3>
+              <p class="card__text">
+                Plain HTML, CSS, and JavaScript. Commit, enable GitHub Pages, and
+                your page is live — no bundler, no toolchain.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources with skeleton loading demonstration -->
+      <section class="section" id="resources" aria-labelledby="resources-heading">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="eyebrow">Resources</span>
+            <h2 id="resources-heading">Loaded on demand</h2>
+            <p class="lead">
+              Skeleton placeholders demonstrate the perceived-performance pattern
+              for any content fetched after the initial paint.
+            </p>
+          </div>
+
+          <!-- Skeleton placeholders (shown first, swapped by app.js) -->
+          <div
+            class="grid skeleton-grid"
+            data-skeleton-group="resources"
+            role="status"
+            aria-busy="true"
+            aria-label="Loading resources"
+          >
+            <div class="card">
+              <div class="skeleton skeleton--block" style="height: 200px; width: 100%"></div>
+              <div class="skeleton skeleton--title mt-12"></div>
+              <div class="skeleton skeleton--text"></div>
+              <div class="skeleton skeleton--text" style="width: 80%"></div>
+            </div>
+            <div class="card">
+              <div class="skeleton skeleton--block" style="height: 200px; width: 100%"></div>
+              <div class="skeleton skeleton--title mt-12"></div>
+              <div class="skeleton skeleton--text"></div>
+              <div class="skeleton skeleton--text" style="width: 80%"></div>
+            </div>
+            <div class="card">
+              <div class="skeleton skeleton--block" style="height: 200px; width: 100%"></div>
+              <div class="skeleton skeleton--title mt-12"></div>
+              <div class="skeleton skeleton--text"></div>
+              <div class="skeleton skeleton--text" style="width: 80%"></div>
+            </div>
+            <span class="sr-only">Loading resources…</span>
+          </div>
+
+          <!-- Real content (hidden until skeletons are replaced) -->
+          <div class="grid feature-grid" data-content-group="resources" hidden>
+            <article class="card">
+              <h3 class="card__title">Getting started guide</h3>
+              <p class="card__text">
+                A step-by-step walkthrough for cloning the template and publishing
+                your first page.
+              </p>
+              <p class="card__text">
+                <time datetime="2026-10-17">Updated October 17, 2026</time>
+              </p>
+            </article>
+            <article class="card">
+              <h3 class="card__title">Component reference</h3>
+              <p class="card__text">
+                Documented buttons, cards, and layout utilities with BEM class
+                names you can copy directly.
+              </p>
+              <p class="card__text">
+                <time datetime="2026-10-17">Updated October 17, 2026</time>
+              </p>
+            </article>
+            <article class="card">
+              <h3 class="card__title">Accessibility checklist</h3>
+              <p class="card__text">
+                Keyboard, contrast, and reduced-motion considerations baked into
+                every pattern.
+              </p>
+              <p class="card__text">
+                <time datetime="2026-10-17">Updated October 17, 2026</time>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section
+        class="section section--alt"
+        id="testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="eyebrow">Social proof</span>
+            <h2 id="testimonials-heading">Teams ship sooner</h2>
+          </div>
+
+          <div class="grid testimonial-grid">
+            <figure class="testimonial" data-aos="fade-up">
+              <blockquote class="testimonial__quote">
+                The token system meant we rebranded the whole app by editing a
+                single file. Genuinely refreshing.
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <img
+                  class="testimonial__avatar"
+                  src="assets/avatar-1.svg"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>
+                  <cite class="testimonial__name">Jordan Rivera</cite>
+                  <span class="testimonial__role">Frontend Lead, Northwind</span>
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="testimonial" data-aos="fade-up">
+              <blockquote class="testimonial__quote">
+                No build step, no surprises. We had it live on GitHub Pages in
+                under ten minutes.
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <img
+                  class="testimonial__avatar"
+                  src="assets/avatar-2.svg"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>
+                  <cite class="testimonial__name">Priya Nair</cite>
+                  <span class="testimonial__role">Engineer, Lumen Labs</span>
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="testimonial" data-aos="fade-up">
+              <blockquote class="testimonial__quote">
+                Accessible by default. The focus states and reduced-motion
+                handling saved us an entire audit cycle.
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <img
+                  class="testimonial__avatar"
+                  src="assets/avatar-3.svg"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>
+                  <cite class="testimonial__name">Marcus Lee</cite>
+                  <span class="testimonial__role">Product Designer, Atlas</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action -->
+      <section class="section cta" id="get-started" aria-labelledby="cta-heading">
+        <div class="container">
+          <div class="cta__panel" data-aos="fade-up">
+            <h2 id="cta-heading">Ready to build your learning app?</h2>
+            <p class="lead">
+              Start from a clean, accessible foundation and focus on what makes
+              your product unique.
+            </p>
+            <div class="cluster cta__actions">
+              <a class="btn btn--primary" href="#top">Use this template</a>
+              <a class="btn btn--ghost" href="#features">Read the docs</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="grid site-footer__grid">
+          <div>
+            <p class="site-footer__brand">CPS·Learning</p>
+            <p class="text-muted mt-8">
+              A GitHub Pages-ready starter for the CPS Learning App design
+              system.
+            </p>
+          </div>
+
+          <nav class="site-footer__links" aria-label="Product">
+            <a class="site-footer__link" href="#features">Features</a>
+            <a class="site-footer__link" href="#resources">Resources</a>
+            <a class="site-footer__link" href="#testimonials">Testimonials</a>
+          </nav>
+
+          <nav class="site-footer__links" aria-label="Company">
+            <a class="site-footer__link" href="#get-started">Get started</a>
+            <a class="site-footer__link" href="#top">Back to top</a>
+          </nav>
+        </div>
+
+        <div class="site-footer__bottom">
+          <small>&copy; 2026 CPS Learning. All rights reserved.</small>
+          <small>Built with the Project Specification Template.</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project script -->
+    <script src="src/app.js" defer></script>
+  </body>
+</html>
